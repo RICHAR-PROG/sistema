@@ -1,0 +1,54 @@
+para la tabla docentes en mysql con las columnas dni, nombre,apellido,  curso, foto
+quiero que me generes el codigo en php para poder actualizar los datos desde un formulario
+//modal
+<div id="modalEliminar" class="modal">
+    <div class="">
+        <p>¿Está seguro que desea eliminar este registro?</p>
+        <div class="modal-footer">
+            <button class="btn btn-danger boton" onclick="eliminarRegistro();">Aceptar</button>
+
+            <button class="btn-success btn boton " onclick="ocultarModal();">Cancelar</button>
+        </div>
+
+    </div>
+</div>
+<script>
+    function mostrarModal() {
+        document.getElementById("../../controllers/admin/eliminar_docentes.php?dni=".$row["dni"]"").style.display = "block";
+    }
+
+    function ocultarModal() {
+        document.getElementById("../../controllers/admin/eliminar_docentes.php?dni=".$row["dni"]  "").style.display = "none";
+    }
+
+    function eliminarRegistro() {
+        // Si se acepta la eliminación, se envía el formulario para eliminar el registro
+        document.getElementById("../../controllers/admin/eliminar_docentes.php?dni=".$row["dni"]  "").submit();
+    }
+</script>
+<style>
+    .modal {
+        /* Posicionamiento */
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* Dimensiones */
+        width: 400px;
+        height: 140px;
+
+        /* Estilos */
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .boton {
+        width: 100px;
+        margin: 5px;
+    }
+</style>
